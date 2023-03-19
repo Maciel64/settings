@@ -1,0 +1,115 @@
+{
+    "$schema": "",
+    "blocks": [
+        {
+            "alignment": "right",
+            "segments": [
+                {
+                    "background": "black",
+                    "foreground": "#8B74FD",
+                    "leading_diamond": "\ue0b6",
+                    "style": "diamond",
+                    "template": "\uf7db {{ .UserName }} ",
+                    "type": "session"
+                },
+
+
+                {
+                    "background": "black",
+                    "foreground": "#fd7478",
+                    "leading_diamond": "\ue0b6",
+                    "style": "diamond",
+                    "template": "{{ if not .SSID }}No Wifi {{ end }}",
+                    "type": "connection"
+                },
+
+
+                {
+                    "background": "black",
+                    "foreground": "#476DAD",
+                    "properties": {
+                        "branch_icon": ""
+                    },
+                    "style": "diamond",
+                    "template": " \u279c {{ .HEAD }} ",
+                    "type": "git"
+                },
+
+
+                {
+                    "background": "black",
+                    "foreground": "#E4F34A",
+                    "properties": {
+                        "fetch_version": false
+                    },
+                    "style": "diamond",
+                    "template": "\ue235",
+                    "trailing_diamond": "\ue0b4",
+                    "type": "python"
+                },
+
+
+                {
+                    "background": "black",
+                    "foreground": "#42E66C",
+                    "style": "diamond",
+                    "template": " \ue718 {{ .Full }}",
+                    "type": "node"
+                },
+                
+
+                {
+                    "background": "black",
+                    "foreground": "white",
+                    "style": "diamond",
+                    "properties": {
+                        "time_format": "2 Jan 15:04:05"
+                    },
+                    "type": "time"
+                },
+
+
+                {
+                    "background": "black",
+                    "foreground": "#9B6BDF",
+                    "foreground_templates": [
+                        "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+                        "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
+                        "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+                    ],
+                    "properties": {
+                        "charged_icon": "\u25cf ",
+                        "charging_icon": "\u21e1 ",
+                        "discharging_icon": "\u21e3 "
+                    },
+                    "style": "diamond",
+                    "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}",
+                    "trailing_diamond": "\ue0b4",
+                    "type": "battery"
+                }
+            ],
+            "type": "rprompt"
+        },
+
+
+        {
+            "alignment": "left",
+            "segments": [
+                {
+                    "background": "black",
+                    "foreground": "#80FAC4",
+                    "leading_diamond": "\ue0b6",
+                    "properties": {
+                        "style": "agnoster_full"
+                    },
+                    "style": "diamond",
+                    "template": "\ue5ff {{ .Path }} \u276f",
+                    "trailing_diamond": "\ue0b4 ",
+                    "type": "path"
+                }
+            ],
+            "type": "prompt"
+        }
+    ],
+    "version": 2
+}
